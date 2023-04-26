@@ -1,0 +1,61 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "interpreter_pattern::interpreter_pattern.dart::WeatherExpression" {
+  +void interpret()
+}
+
+class "interpreter_pattern::interpreter_pattern.dart::WeatherExpressionParser" {
+  -List<WeatherExpression> _expressions
+  +void parse()
+  +void interpret()
+}
+
+class "interpreter_pattern::interpreter_pattern.dart::WeatherContext" {
+  +bool isSunny
+  +bool isCloudy
+  +bool isRainy
+  +bool isWindy
+  +bool isWarm
+  +bool isCold
+  +String forecast
+}
+
+class "interpreter_pattern::interpreter_pattern.dart::SunnyExpression" {
+  +void interpret()
+}
+
+"interpreter_pattern::interpreter_pattern.dart::WeatherExpression" <|-- "interpreter_pattern::interpreter_pattern.dart::SunnyExpression"
+
+class "interpreter_pattern::interpreter_pattern.dart::CloudyExpression" {
+  +void interpret()
+}
+
+"interpreter_pattern::interpreter_pattern.dart::WeatherExpression" <|-- "interpreter_pattern::interpreter_pattern.dart::CloudyExpression"
+
+class "interpreter_pattern::interpreter_pattern.dart::RainyExpression" {
+  +void interpret()
+}
+
+"interpreter_pattern::interpreter_pattern.dart::WeatherExpression" <|-- "interpreter_pattern::interpreter_pattern.dart::RainyExpression"
+
+class "interpreter_pattern::interpreter_pattern.dart::WindyExpression" {
+  +void interpret()
+}
+
+"interpreter_pattern::interpreter_pattern.dart::WeatherExpression" <|-- "interpreter_pattern::interpreter_pattern.dart::WindyExpression"
+
+class "interpreter_pattern::interpreter_pattern.dart::WarmExpression" {
+  +void interpret()
+}
+
+"interpreter_pattern::interpreter_pattern.dart::WeatherExpression" <|-- "interpreter_pattern::interpreter_pattern.dart::WarmExpression"
+
+class "interpreter_pattern::interpreter_pattern.dart::ColdExpression" {
+  +void interpret()
+}
+
+"interpreter_pattern::interpreter_pattern.dart::WeatherExpression" <|-- "interpreter_pattern::interpreter_pattern.dart::ColdExpression"
+
+
+@enduml
